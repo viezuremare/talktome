@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    user-select: none; 
+    overflow: hidden;
+    background: rgb(46,54,54);
+    touch-action: none;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+h1 {
+    margin: 0 auto;
+    font-size: 3.5em;
+    font-weight: 100;
+    color: white;
+}
+
+#strong {
+    font-weight: 900;
+    color: grey;
+}
+
+
+h2 {
+    margin-bottom: 0;
+}
+
+h3 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+div {
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-top: -25%;
+    margin-left: -50%;
+    height: 50%;
+    width: 100%;
+    color: white;
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.visib {
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
