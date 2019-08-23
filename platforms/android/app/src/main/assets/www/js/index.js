@@ -58,6 +58,12 @@ p1array = Array.from(p1)
 const p2 = document.getElementsByClassName('page2')
 p2array = Array.from(p2)
 
+const p3 = document.getElementsByClassName('page3')
+p3array = Array.from(p3)
+
+const p4 = document.getElementsByClassName('page4')
+p4array = Array.from(p4)
+
 const pageimagewrapper = document.getElementsByClassName('pageimagewrapper')
 pgimgwrappArray = Array.from(pageimagewrapper)
 
@@ -86,6 +92,14 @@ function removeBlur() {
         el.style.pointerEvents = 'auto'
         el.classList.remove('is-blurred')
     })
+    p3array.forEach(el => {
+        el.style.pointerEvents = 'auto'
+        el.classList.remove('is-blurred')
+    })
+    p4array.forEach(el => {
+        el.style.pointerEvents = 'auto'
+        el.classList.remove('is-blurred')
+    })
     s1.style.pointerEvents = 'auto'
     s1.classList.remove('is-blurred')
     s2.style.pointerEvents = 'auto'
@@ -104,6 +118,14 @@ function blurBackground() {
         el.style.pointerEvents = 'none'
         el.classList.add('is-blurred')
     })
+    p3array.forEach(el => {
+        el.style.pointerEvents = 'none'
+        el.classList.add('is-blurred')
+    })
+    p4array.forEach(el => {
+        el.style.pointerEvents = 'none'
+        el.classList.add('is-blurred')
+    })
     s1.style.pointerEvents = 'none'
     s1.classList.add('is-blurred')
     s2.style.pointerEvents = 'none'
@@ -113,90 +135,304 @@ function blurBackground() {
 }
 
 
+function splashscr () {
+
+     // fade in
+     setTimeout(() => {
+        introtext.classList.remove('hidden')
+        introtext.classList.add('visib')
+    }, 800);
+    
+    setTimeout(() => {
+        introtext2.classList.remove('hidden')
+        introtext2.classList.add('visib')
+    }, 1300);
+    
+    setTimeout(() => {
+        introtext3.classList.remove('hidden')
+        introtext3.classList.add('visib')
+    }, 1700);
+    
+    
+    // fade out
+    setTimeout(() => {
+        introtext.classList.remove('visib')
+        introtext.classList.add('hidden')
+    }, 4000);
+    
+    setTimeout(() => {
+        introtext2.classList.remove('visib')
+        introtext2.classList.add('hidden')
+    }, 4200);
+    
+    setTimeout(() => {
+        introtext3.classList.remove('visib')
+        introtext3.classList.add('hidden')
+    }, 4400);
+
+    // remove splash screen
+    setTimeout(() => {
+        splash.style.display= "none"
+    }, 6000) 
+}
+
+
 document.addEventListener("deviceready", onload, false);
 
-  // Open Database
-    function onload() {
+    // Open Database
+    function onload() { 
 
-      
 
-        // fade in
-        setTimeout(() => {
-            introtext.classList.remove('hidden')
-            introtext.classList.add('visib')
-        }, 800);
-        
-        setTimeout(() => {
-            introtext2.classList.remove('hidden')
-            introtext2.classList.add('visib')
-        }, 1300);
-        
-        setTimeout(() => {
-            introtext3.classList.remove('hidden')
-            introtext3.classList.add('visib')
-        }, 1700);
-        
-        
-        // fade out
-        setTimeout(() => {
-            introtext.classList.remove('visib')
-            introtext.classList.add('hidden')
-        }, 4000);
-        
-        setTimeout(() => {
-            introtext2.classList.remove('visib')
-            introtext2.classList.add('hidden')
-        }, 4200);
-        
-        setTimeout(() => {
-            introtext3.classList.remove('visib')
-            introtext3.classList.add('hidden')
-        }, 4400);
+        blurBackground()
 
-        // remove splash screen
+        // Create Menu PopUp
+        var initial1 = document.createElement('button')
+        initial1.classList.add('trans1off')
+        var menutext1 =  document.createElement('span')
+        menutext1.classList.add('txtpageimage')
+        menutext1.innerHTML = 'English EN'
+        var menuimg1 = document.createElement('img')
+        menuimg1.classList.add('imageclmenu')
+        menuimg1.src = 'img/Languages/en.png'
+        splash.appendChild(initial1)
+        initial1.appendChild(menutext1)
+        initial1.appendChild(menuimg1)
+
+        var initial2 = document.createElement('button')
+        initial2.classList.add('trans2off')
+        var menutext2 =  document.createElement('span')
+        menutext2.classList.add('txtpageimage')
+        menutext2.innerHTML = 'Italiano IT'
+        var menuimg2 = document.createElement('img')
+        menuimg2.classList.add('imageclmenu')
+        menuimg2.src = 'img/Languages/it.png'
+        splash.appendChild(initial2)
+        initial2.appendChild(menutext2)
+        initial2.appendChild(menuimg2)
+
+        var initial3 = document.createElement('button')
+        initial3.classList.add('trans2off')
+        var menutext3 =  document.createElement('span')
+        menutext3.classList.add('txtpageimage')
+        menutext3.innerHTML = 'Português PT'
+        var menuimg3 = document.createElement('img')
+        menuimg3.classList.add('imageclmenu')
+        menuimg3.src = 'img/Languages/pt.png'
+        splash.appendChild(initial3)
+        initial3.appendChild(menutext3)
+        initial3.appendChild(menuimg3)
+
+        var initial4 = document.createElement('button')
+        initial4.classList.add('trans2off')
+        var menutext4 =  document.createElement('span')
+        menutext4.classList.add('txtpageimage')
+        menutext4.innerHTML = 'Español ES'
+        var menuimg4 = document.createElement('img')
+        menuimg4.classList.add('imageclmenu')
+        menuimg4.src = 'img/Languages/es.png'
+        splash.appendChild(initial4)
+        initial4.appendChild(menutext4)
+        initial4.appendChild(menuimg4)
+
         setTimeout(() => {
-            splash.style.display= "none"
-        }, 6000) 
-        
-        db = window.sqlitePlugin.openDatabase(
-            {name: "aacdatabase.db", location: 'default', createFromLocation: 1});
-            db.transaction(function(tx) {
-                tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
-                    var len = rs.rows.length;
-                    console.log(len + " rows found.");
-                    console.log(imgarray.length)
-                    for (let i=0; i<len; i++){
-                        console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
-                    }  
-                    for (let j=0; j<imgarray.length; j++) {
-                        imgarray[j].src = rs.rows.item(j).image
-                        mainaudioarray[j].src = rs.rows.item(j).sound
-                        console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                        txtpageimagearray[j].innerHTML = rs.rows.item(j).description
-                    }
-                }, function(tx, error) {
-                  console.log('SELECT main error: ' + error.message);
+            initial1.classList.remove('trans1off')
+            initial1.classList.add('lang1on')
+            initial2.classList.remove('trans2off')
+            initial2.classList.add('lang2on')
+            initial3.classList.remove('trans2off')
+            initial3.classList.add('lang3on')
+            initial4.classList.remove('trans2off')
+            initial4.classList.add('lang4on')
+            
+        }, 100);
+
+        initial1.addEventListener('tap', () => {
+            db = window.sqlitePlugin.openDatabase(
+                {name: "aacdatabase_EN.db", location: 'default', createFromLocation: 1});
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
+                        var len = rs.rows.length;
+                        console.log(len + " rows found.");
+                        console.log(imgarray.length)
+                        for (let i=0; i<len; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
+                        }  
+                        for (let j=0; j<imgarray.length; j++) {
+                            imgarray[j].src = rs.rows.item(j).image
+                            mainaudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT main error: ' + error.message);
+                    });
+                })
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
+                        var lencat = rs.rows.length;
+                        console.log(lencat + " rows found.");
+                        console.log(imgcatarray.length)
+                        for (let i=0; i<lencat; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
+                        }
+                        for (let j=0; j<imgcatarray.length; j++) {
+                            imgcatarray[j].src = rs.rows.item(j).image
+                            cataudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT cat error: ' + error.message);
+                    });
                 });
-            })
-            db.transaction(function(tx) {
-                tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
-                    var lencat = rs.rows.length;
-                    console.log(lencat + " rows found.");
-                    console.log(imgcatarray.length)
-                    for (let i=0; i<lencat; i++){
-                        console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
-                    }
-                    for (let j=0; j<imgcatarray.length; j++) {
-                        imgcatarray[j].src = rs.rows.item(j).image
-                        cataudioarray[j].src = rs.rows.item(j).sound
-                        console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                        txtcatimagearray[j].innerHTML = rs.rows.item(j).description
-                    }
-                }, function(tx, error) {
-                  console.log('SELECT cat error: ' + error.message);
-                });
-            });
+            splashscr()
+            splash.removeChild(initial1)
+            splash.removeChild(initial2)
+            splash.removeChild(initial3)
+            splash.removeChild(initial4)
+            removeBlur()
+        })
 
+        initial2.addEventListener('tap', () => {
+            db = window.sqlitePlugin.openDatabase(
+                {name: "aacdatabase_IT.db", location: 'default', createFromLocation: 1});
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
+                        var len = rs.rows.length;
+                        console.log(len + " rows found.");
+                        console.log(imgarray.length)
+                        for (let i=0; i<len; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
+                        }  
+                        for (let j=0; j<imgarray.length; j++) {
+                            imgarray[j].src = rs.rows.item(j).image
+                            mainaudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT main error: ' + error.message);
+                    });
+                })
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
+                        var lencat = rs.rows.length;
+                        console.log(lencat + " rows found.");
+                        console.log(imgcatarray.length)
+                        for (let i=0; i<lencat; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
+                        }
+                        for (let j=0; j<imgcatarray.length; j++) {
+                            imgcatarray[j].src = rs.rows.item(j).image
+                            cataudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT cat error: ' + error.message);
+                    });
+                });
+            splashscr()
+            splash.removeChild(initial1)
+            splash.removeChild(initial2)
+            splash.removeChild(initial3)
+            splash.removeChild(initial4)
+            removeBlur()
+        })
+
+        initial3.addEventListener('tap', () => {
+            db = window.sqlitePlugin.openDatabase(
+                {name: "aacdatabase_PT.db", location: 'default', createFromLocation: 1});
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
+                        var len = rs.rows.length;
+                        console.log(len + " rows found.");
+                        console.log(imgarray.length)
+                        for (let i=0; i<len; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
+                        }  
+                        for (let j=0; j<imgarray.length; j++) {
+                            imgarray[j].src = rs.rows.item(j).image
+                            mainaudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT main error: ' + error.message);
+                    });
+                })
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
+                        var lencat = rs.rows.length;
+                        console.log(lencat + " rows found.");
+                        console.log(imgcatarray.length)
+                        for (let i=0; i<lencat; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
+                        }
+                        for (let j=0; j<imgcatarray.length; j++) {
+                            imgcatarray[j].src = rs.rows.item(j).image
+                            cataudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT cat error: ' + error.message);
+                    });
+                });
+            splashscr()
+            splash.removeChild(initial1)
+            splash.removeChild(initial2)
+            splash.removeChild(initial3)
+            splash.removeChild(initial4)
+            removeBlur()
+        })
+
+        initial4.addEventListener('tap', () => {
+            db = window.sqlitePlugin.openDatabase(
+                {name: "aacdatabase_ES.db", location: 'default', createFromLocation: 1});
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
+                        var len = rs.rows.length;
+                        console.log(len + " rows found.");
+                        console.log(imgarray.length)
+                        for (let i=0; i<len; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
+                        }  
+                        for (let j=0; j<imgarray.length; j++) {
+                            imgarray[j].src = rs.rows.item(j).image
+                            mainaudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT main error: ' + error.message);
+                    });
+                })
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
+                        var lencat = rs.rows.length;
+                        console.log(lencat + " rows found.");
+                        console.log(imgcatarray.length)
+                        for (let i=0; i<lencat; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
+                        }
+                        for (let j=0; j<imgcatarray.length; j++) {
+                            imgcatarray[j].src = rs.rows.item(j).image
+                            cataudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT cat error: ' + error.message);
+                    });
+                });
+            splashscr()
+            splash.removeChild(initial1)
+            splash.removeChild(initial2)
+            splash.removeChild(initial3)
+            splash.removeChild(initial4)
+            removeBlur()
+        })
     }
 
 
@@ -204,7 +440,7 @@ document.addEventListener("deviceready", onload, false);
 
 // Swipe Pages
 
-// Swipe Functionality Page 1
+// Swipe Functionality Page 1 Left
 p1array.forEach(element => {
     element.addEventListener('swipeleft', function(e) {
         element.style.webkitTransform = 'translateX(-100%)'
@@ -215,12 +451,53 @@ p1array.forEach(element => {
           element2.style.transform = 'translateX(-100%)'
           element2.style.transition = 'transform .1s'
         })
+        
     })
 });
 
 
+// Swipe Functionality Page 2 Left
+p2array.forEach(element2 => {
+    element2.addEventListener('swipeleft', function(e) {
+        element2.style.transition = 'transform .1s'
+        element2.style.webkitTransform = "translateX(-100%)"
+        element2.style.transform = "translateX(-100%)"
+            // p1array.forEach(element => {
+            //     element.style.transition = 'transform .1s'
+            //     element.style.webkitTransform = 'translateX(-100%)'
+            //     element.style.transform = 'translateX(-100%)'
+            // })   
+            p3array.forEach(element3 => {
+                element3.style.webkitTransform = 'translateX(-200%)'
+                element3.style.transform = 'translateX(-200%)'
+                element3.style.transition = 'transform .1s'
+            })
+    })
+})
 
-// Swipe Functionality Page 2
+
+// Swipe Functionality Page 3 Left
+p3array.forEach(element3 => {
+    element3.addEventListener('swipeleft', function(e) {
+        element3.style.transition = 'transform .1s'
+        element3.style.webkitTransform = "translateX(-100%)"
+        element3.style.transform = "translateX(-100%)"
+            // p1array.forEach(element => {
+            //     element.style.transition = 'transform .1s'
+            //     element.style.webkitTransform = 'translateX(-100%)'
+            //     element.style.transform = 'translateX(-100%)'
+            // })   
+            p4array.forEach(element4 => {
+                element4.style.webkitTransform = 'translateX(-300%)'
+                element4.style.transform = 'translateX(-300%)'
+                element4.style.transition = 'transform .1s'
+            })
+    })
+})
+
+
+
+// Swipe Functionality Page 2 Right
 p2array.forEach(element2 => {
     element2.addEventListener('swiperight', function(e) {
         element2.style.transition = 'transform .1s'
@@ -231,8 +508,51 @@ p2array.forEach(element2 => {
                 element.style.webkitTransform = 'translateX(0%)'
                 element.style.transform = 'translateX(0%)'
             })   
+            
     })
 })
+
+
+// Swipe Functionality Page 3 Right
+p3array.forEach(element3 => {
+    element3.addEventListener('swiperight', function(e) {
+        element3.style.transition = 'transform .1s'
+        element3.style.webkitTransform = "translateX(200%)"
+        element3.style.transform = "translateX(200%)"
+            // p1array.forEach(element => {
+            //     element.style.webkitTransform = 'translateX(-100%)'
+            //     element.style.transform = 'translateX(-100%)'
+            //     element.style.transition = 'transform .1s'
+            // })  
+            p2array.forEach(element2 => {
+                element2.style.webkitTransform = 'translateX(-100%)'
+                element2.style.transform = 'translateX(-100%)'
+                element2.style.transition = 'transform .1s'
+            }) 
+    })
+})
+
+// Swipe Functionality Page 4 Right
+p4array.forEach(element4 => {
+    element4.addEventListener('swiperight', function(e) {
+        element4.style.transition = 'transform .1s'
+        element4.style.webkitTransform = "translateX(300%)"
+        element4.style.transform = "translateX(300%)"
+            // p1array.forEach(element => {
+            //     element.style.webkitTransform = 'translateX(-100%)'
+            //     element.style.transform = 'translateX(-100%)'
+            //     element.style.transition = 'transform .1s'
+            // })  
+            p3array.forEach(element3 => {
+                element3.style.webkitTransform = 'translateX(-200%)'
+                element3.style.transform = 'translateX(-200%)'
+                element3.style.transition = 'transform .1s'
+            }) 
+    })
+})
+
+
+
 
 
 // Reset Swiped Pages on Category Click
@@ -242,7 +562,13 @@ for (let i=0; i < categoryArray.length; i++) {
                 element2.style.webkitTransform = "translate(100%)" 
         })
         p1array.forEach(element => {
-            element.style.webkitTransform = 'translate(0%)  '
+            element.style.webkitTransform = 'translate(0%)'
+        })   
+        p3array.forEach(element => {
+            element.style.webkitTransform = 'translate(200%)'
+        })   
+        p4array.forEach(element => {
+            element.style.webkitTransform = 'translate(300%)'
         })   
     })
 }   
