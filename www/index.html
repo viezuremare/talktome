@@ -7,26 +7,30 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <!-- <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+JP|Roboto&display=swap" rel="stylesheet"> -->
         
-    <title>AAC</title>
+    <title>TalkWishes</title>
 </head> 
 <body>
         <div id='splash'>
                 <div id='littlediv'>
-                                <h1 id='introtext' class='hidden'><strong><span id='strong'>Talk</span></strong>ToMe</h1>
+                                <div id='continueButton' class='hidden startButton'>S T A R T</div>
+                                <h1 id='introtext' class='hidden'><strong><span id='stronger'>Talk</span></strong>Wishes</h1>
                                 <h2 id='introtext2' class='hidden'>Communicate Your Needs</h2>
                                 <h3 id='introtext3' class='hidden'>Fully Customizable App</h3>
                 </div>    
-                <div id='littlediv2' class="hidden">Icons made and provided by 
-                        <a href="https://www.flaticon.com/authors/freepik"title="Freepik">Freepik</a> 
-                        from <a href="https://www.flaticon.com/"title="Flaticon">www.flaticon.com</a><br>
-                        <a href="https://thenounproject.com/">thenounproject.com</a><br>
-                        <a href="https://icons8.com/">icons8.com</a>
+                <div id='littlediv2' class="hidden"> 
+                        Pictograms and Icons Downloaded from <br>
+                                <a href="https://thenounproject.com/">thenounproject.com</a><br>
+                                <a href="https://icons8.com/">icons8.com</a><br>
+                        and made by <a href="https://www.flaticon.com/authors/freepik"title="Freepik">Freepik</a> 
+                        from <a href="https://www.flaticon.com/"title="Flaticon">www.flaticon.com</a>
+                        
                 </div>
         </div>
         <div id="wrapper">
                 <div id="topdisplay">
-                    <div id="btnplay"><span id='spbtnplay'>✓</span></div>
-                    <div id="btndel"><span id='spbtndel'>✖</span></div>
+                    <div id="btnplay"><div id='spbtnplay'>✓</div></div>
+                    <div id="btndel"><div id='spbtndel'>×</div></div>
+                    <!-- ✓ ✖ ▶ -->
                 </div>
                 <div id="audiodisplay"></div>
 
@@ -41,32 +45,32 @@
                         <div class="category cat1pages">
                                 <a href='#cat1'><div class="catbox" 
                                 onclick="this.nextElementSibling.play()">
-                                <span class='txtcatimage'>DESPRE</span>
-                                <img class='imgcat' src='img/a few.png'>
+                                <span class='txtcatimage'>Basics</span>
+                                <img class='imgcat' src='img/Category/basics.png'>
                                 </div>
                                 <audio class='cataudio' src='sounds/porci.mp3'></audio></a>
                         </div>
                         <div class="category cat2pages">
                                 <a href='#cat2'><div class="catbox" 
                                         onclick="this.nextElementSibling.play()">
-                                        <span class='txtcatimage'>DESPRE MINE</span>
-                                        <img class='imgcat' src='img/a few.png'>
+                                        <span class='txtcatimage'>I Feel</span>
+                                        <img class='imgcat' src='img/Category/Ifeel.png'>
                                         </div>
                                         <audio class='cataudio' src='sounds/porci.mp3'></audio></a>
                         </div>
                         <div class="category cat3pages">
                                 <a href='#cat3'><div class="catbox" 
                                 onclick="this.nextElementSibling.play()">
-                                <span class='txtcatimage'>DESPRE MINE</span>
-                                <img class='imgcat' src='img/a few.png'>
+                                <span class='txtcatimage'>Eat & Drink</span>
+                                <img class='imgcat' src='img/Category/eatdrink.png'>
                                 </div>
                                 <audio class='cataudio' src='sounds/porci.mp3'></audio></a>
                         </div>
                         <div class="category cat4pages">
                                 <a href='#cat4'><div class="catbox" 
                                         onclick="this.nextElementSibling.play()">
-                                <span class='txtcatimage'>DESPRE MINE</span>
-                                <img class='imgcat' src='img/a few.png'>
+                                <span class='txtcatimage'>Actions</span>
+                                <img class='imgcat' src='img/Category/actions.png'>
                                 </div>
                                 <audio class='cataudio' src='sounds/porci.mp3'></audio></a>
                         </div>
@@ -128,8 +132,8 @@
                                 <div class="image">
                                         
                                         <div class='pageimagewrapper'>
-                                        <span class='txtpageimage'>INFO</span>
-                                        <img class="imagecl"src="img/a few.png"
+                                        <span class='txtpageimage'>Yes</span>
+                                        <img class="imagecl"src="img/Basics/yes.png"
                                         onclick="this.nextElementSibling.play()"/>
                                         <audio class='mainaudio' src='sounds/porci.mp3'></audio>                                       
                                         </div>
@@ -137,16 +141,16 @@
                                 
                                 <div class="image">
                                         <div class='pageimagewrapper'>
-                                        <span class='txtpageimage'>INFO</span>
-                                        <img class="imagecl"src="img/a few.png"
+                                        <span class='txtpageimage'>No</span>
+                                        <img class="imagecl"src="img/Basics/no.png"
                                         onclick="this.nextElementSibling.play()"/>
                                         <audio class='mainaudio' src='sounds/porci.mp3'></audio>                                      
                                        </div>
                                 </div>
                                 <div class="image">
                                         <div class='pageimagewrapper'>
-                                        <span class='txtpageimage'>INFO</span>
-                                        <img class="imagecl"src="img/a few.png"
+                                        <span class='txtpageimage'>I Don't Know</span>
+                                        <img class="imagecl"src="img/Basics/I don't know.png"
                                         onclick="this.nextElementSibling.play()"/>
                                         <audio class='mainaudio' src='sounds/porci.mp3'></audio>               
                                       </div>
@@ -158,22 +162,22 @@
                                 </div>
                                 <div class="image">
                                         <div class='pageimagewrapper'>
-                                        <span class='txtpageimage'>INFO</span>
-                                        <img class="imagecl" src="img/a few.png
+                                        <span class='txtpageimage'>I want</span>
+                                        <img class="imagecl" src="img/Basics/I want.png
                                         "onclick="this.nextElementSibling.play()"/>
                                         <audio class='mainaudio' src='sounds/porci.mp3'></audio>              
                                 </div></div>
                                 <div class="image">
                                         <div class='pageimagewrapper'>
-                                        <span class='txtpageimage'>INFO</span>
-                                        <img class="imagecl" src="img/a few.png
+                                        <span class='txtpageimage'>I Don't Want</span>
+                                        <img class="imagecl" src="img/Basics/i don't want.png
                                         "onclick="this.nextElementSibling.play()"/>
                                         <audio class='mainaudio' src='sounds/porci.mp3'></audio>                                      
                                 </div></div>
                                 <div class="image">
                                         <div class='pageimagewrapper'>
-                                        <span class='txtpageimage'>INFO</span>
-                                        <img class="imagecl" src="img/a few.png
+                                        <span class='txtpageimage'>I Need Help</span>
+                                        <img class="imagecl" src="img/Basics/I need help.png
                                         "onclick="this.nextElementSibling.play()"/>
                                         <audio class='mainaudio' src='sounds/porci.mp3'></audio>                                     
                                 </div></div>
@@ -2380,29 +2384,34 @@
              <div  class='cat1pages page1'>
                                 
                 <div class="image">
+                                
+                </div>
+                <div class="image">
+                        
+                        <div class='pageimagewrapper'>
+                        <span class='txtpageimage'>Yes</span>
+                        <img class="imagecl"src="img/Basics/yes.png"
+                        onclick="this.nextElementSibling.play()"/>
+                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>                                       
+                        </div>
+                </div>
                 
+                <div class="image">
+                        <div class='pageimagewrapper'>
+                        <span class='txtpageimage'>No</span>
+                        <img class="imagecl"src="img/Basics/no.png"
+                        onclick="this.nextElementSibling.play()"/>
+                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>                                      
+                       </div>
                 </div>
                 <div class="image">
                         <div class='pageimagewrapper'>
-                        <span class='txtpageimage'>INFO</span>
-                        <img class="imagecl"src="img/a few.png"
+                        <span class='txtpageimage'>I Don't Know</span>
+                        <img class="imagecl"src="img/Basics/I don't know.png"
                         onclick="this.nextElementSibling.play()"/>
-                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>
-                </div></div>
-                <div class="image">
-                        <div class='pageimagewrapper'>
-                        <span class='txtpageimage'>INFO</span>
-                        <img class="imagecl"src="img/a few.png"
-                        onclick="this.nextElementSibling.play()"/>
-                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>
-                </div></div>
-                <div class="image">
-                        <div class='pageimagewrapper'>
-                        <span class='txtpageimage'>INFO</span>
-                        <img class="imagecl"src="img/a few.png"
-                        onclick="this.nextElementSibling.play()"/>
-                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>
-                </div></div>
+                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>               
+                      </div>
+                </div>
                 
 
                 <div class="image">
@@ -2410,48 +2419,47 @@
                 </div>
                 <div class="image">
                         <div class='pageimagewrapper'>
-                        <span class='txtpageimage'>INFO</span>
-                        <img class="imagecl"src="img/a few.png"
-                        onclick="this.nextElementSibling.play()"/>
-                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>
+                        <span class='txtpageimage'>I want</span>
+                        <img class="imagecl" src="img/Basics/I want.png
+                        "onclick="this.nextElementSibling.play()"/>
+                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>              
                 </div></div>
                 <div class="image">
                         <div class='pageimagewrapper'>
-                        <span class='txtpageimage'>INFO</span>
-                        <img class="imagecl"src="img/a few.png"
-                        onclick="this.nextElementSibling.play()"/>
-                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>
+                        <span class='txtpageimage'>I Don't Want</span>
+                        <img class="imagecl" src="img/Basics/i don't want.png
+                        "onclick="this.nextElementSibling.play()"/>
+                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>                                      
                 </div></div>
                 <div class="image">
                         <div class='pageimagewrapper'>
-                        <span class='txtpageimage'>INFO</span>
-                        <img class="imagecl"src="img/a few.png"
-                        onclick="this.nextElementSibling.play()"/>
-                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>
+                        <span class='txtpageimage'>I Need Help</span>
+                        <img class="imagecl" src="img/Basics/I need help.png
+                        "onclick="this.nextElementSibling.play()"/>
+                        <audio class='mainaudio' src='sounds/porci.mp3'></audio>                                     
                 </div></div>
-
 
                 <div class="image">
                 
                 </div>
                 <div class="image">
                         <div class='pageimagewrapper'>
-                        <span class='txtpageimage'>INFO</span>
-                        <img class="imagecl"src="img/a few.png"
+                        <span class='txtpageimage'>I'm Hungry</span>
+                        <img class="imagecl"src="img/Basics/hungry.png"
                         onclick="this.nextElementSibling.play()"/>
                         <audio class='mainaudio' src='sounds/porci.mp3'></audio>
                 </div></div>
                 <div class="image">
                         <div class='pageimagewrapper'>
-                        <span class='txtpageimage'>INFO</span>
-                        <img class="imagecl"src="img/a few.png"
+                        <span class='txtpageimage'>I'm Thirsty</span>
+                        <img class="imagecl"src="img/Basics/thirsty.png"
                         onclick="this.nextElementSibling.play()"/>
                         <audio class='mainaudio' src='sounds/porci.mp3'></audio>
                 </div></div>
                 <div class="image">
                         <div class='pageimagewrapper'>
-                        <span class='txtpageimage'>INFO</span>
-                        <img class="imagecl"src="img/a few.png"
+                        <span class='txtpageimage'>To Use The Bathroom</span>
+                        <img class="imagecl"src="img/Basics/bathroom.png"
                         onclick="this.nextElementSibling.play()"/>
                         <audio class='mainaudio' src='sounds/porci.mp3'></audio>
                 </div></div>

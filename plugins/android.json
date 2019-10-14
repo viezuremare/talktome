@@ -9,19 +9,19 @@
   "installed_plugins": {
     "cordova-plugin-camera": {
       "ANDROID_SUPPORT_V4_VERSION": "27.+",
-      "PACKAGE_NAME": "com.aacproject.mirel"
+      "PACKAGE_NAME": "com.talkwishesasian.app"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.aacproject.mirel"
+      "PACKAGE_NAME": "com.talkwishesasian.app"
     },
     "cordova-plugin-media-capture": {
-      "PACKAGE_NAME": "com.aacproject.mirel"
+      "PACKAGE_NAME": "com.talkwishesasian.app"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.aacproject.mirel"
+      "PACKAGE_NAME": "com.talkwishesasian.app"
     },
     "cordova-sqlite-ext": {
-      "PACKAGE_NAME": "com.aacproject.mirel"
+      "PACKAGE_NAME": "com.talkwishesasian.app"
     }
   },
   "dependent_plugins": {}

@@ -7,6 +7,7 @@ let introtext = document.getElementById('introtext')
 let introtext2 = document.getElementById('introtext2')
 let introtext3 = document.getElementById('introtext3')
 let littlediv2 = document.getElementById('littlediv2')
+let continueButton = document.getElementById('continueButton')
 
 // Display
 const topdisplay = document.getElementById('topdisplay')
@@ -111,29 +112,47 @@ function removeBlur() {
 
 // Blur Background
 function blurBackground() {
+
+    wrapper.style.position = "fixed"
     p1array.forEach(el => {
-        el.style.pointerEvents = 'none'
+        el.style.pointerEvents = "none"
+        el.style.touchAction = 'none'
+        el.style.overflowY = 'hidden'
         el.classList.add('is-blurred')
     })
     p2array.forEach(el => {
-        el.style.pointerEvents = 'none'
+        el.style.pointerEvents = "none"
+        el.style.touchAction = 'none'
+        el.style.overflowY = 'hidden'
         el.classList.add('is-blurred')
     })
     p3array.forEach(el => {
-        el.style.pointerEvents = 'none'
+        el.style.pointerEvents = "none"
+        el.style.touchAction = 'none'
+        el.style.overflowY = 'hidden'
         el.classList.add('is-blurred')
     })
     p4array.forEach(el => {
-        el.style.pointerEvents = 'none'
+        el.style.pointerEvents = "none"
+        el.style.touchAction = 'none'
+        el.style.overflowY = 'hidden'
         el.classList.add('is-blurred')
     })
-    s1.style.pointerEvents = 'none'
+    s1.style.touchAction = "none"
+    s1.style.pointerEvents = "none"
+    s1.style.overflowY = "hidden"
     s1.classList.add('is-blurred')
-    s2.style.pointerEvents = 'none'
+    s2.style.touchAction = "none"
+    s2.style.pointerEvents = "none"
+    s2.style.overflowY = "hidden"
     s2.classList.add('is-blurred')
     topdisplay.style.pointerEvents = 'none'
+    topdisplay.style.touchAction = 'none'
+    topdisplay.style.overflowX = 'hidden'
+    topdisplay.style.overflowY = 'hidden'
     topdisplay.classList.add('is-blurred2')
 }
+
 
 
 function splashscr () {
@@ -142,41 +161,52 @@ function splashscr () {
      setTimeout(() => {
         introtext.classList.remove('hidden')
         introtext.classList.add('visib')
-        littlediv2.classList.remove('hidden')
-        littlediv2.classList.add('visib')
-    }, 800);
+    }, 900);
     
     setTimeout(() => {
         introtext2.classList.remove('hidden')
         introtext2.classList.add('visib')
-    }, 1300);
+    }, 1400);
     
     setTimeout(() => {
         introtext3.classList.remove('hidden')
         introtext3.classList.add('visib')
-    }, 1700);
-    
-    
-    // fade out
-    setTimeout(() => {
-        introtext.classList.remove('visib')
-        introtext.classList.add('hidden')
-    }, 4000);
-    
-    setTimeout(() => {
-        introtext2.classList.remove('visib')
-        introtext2.classList.add('hidden')
-    }, 4200);
-    
-    setTimeout(() => {
-        introtext3.classList.remove('visib')
-        introtext3.classList.add('hidden')
-    }, 4400);
+    }, 1800);
 
-    // remove splash screen
     setTimeout(() => {
-        splash.style.display= "none"
-    }, 6000) 
+        littlediv2.classList.remove('hidden')
+        littlediv2.classList.add('visib')     
+    }, 2200);
+
+    setTimeout(() => {
+        continueButton.classList.remove('hidden')
+        continueButton.classList.add('visib')
+    }, 3200);
+    
+    
+    continueButton.addEventListener('tap', () => {
+        // fade out
+        setTimeout(() => {
+            introtext.classList.remove('visib')
+            introtext.classList.add('hidden')
+        }, 800);
+        
+        setTimeout(() => {
+            introtext2.classList.remove('visib')
+            introtext2.classList.add('hidden')
+        }, 1000);
+        
+        setTimeout(() => {
+            introtext3.classList.remove('visib')
+            introtext3.classList.add('hidden')
+        }, 1200);
+
+        // remove splash screen
+        setTimeout(() => {
+            splash.style.display= "none"
+        }, 1250) 
+    })
+    
 }
 
 
@@ -193,37 +223,62 @@ document.addEventListener("deviceready", onload, false);
         initial1.classList.add('trans1off')
         var menutext1 =  document.createElement('span')
         menutext1.classList.add('txtpageimage')
-        menutext1.innerHTML = 'English EN'
+        menutext1.innerHTML = 'Português PT'
         var menuimg1 = document.createElement('img')
         menuimg1.classList.add('imageclmenu')
-        menuimg1.src = 'img/Languages/en.png'
+        menuimg1.src = 'img/Languages/pt.png'
         splash.appendChild(initial1)
         initial1.appendChild(menutext1)
         initial1.appendChild(menuimg1)
 
-        // var initial2 = document.createElement('button')
-        // initial2.classList.add('trans2off')
-        // var menutext2 =  document.createElement('span')
-        // menutext2.classList.add('txtpageimage')
-        // menutext2.innerHTML = 'Italiano IT'
-        // var menuimg2 = document.createElement('img')
-        // menuimg2.classList.add('imageclmenu')
-        // menuimg2.src = 'img/Languages/it.png'
-        // splash.appendChild(initial2)
-        // initial2.appendChild(menutext2)
-        // initial2.appendChild(menuimg2)
+        var initial2 = document.createElement('button')
+        initial2.classList.add('trans2off')
+        var menutext2 =  document.createElement('span')
+        menutext2.classList.add('txtpageimage')
+        menutext2.innerHTML = 'Español ES'
+        var menuimg2 = document.createElement('img')
+        menuimg2.classList.add('imageclmenu')
+        menuimg2.src = 'img/Languages/es.png'
+        splash.appendChild(initial2)
+        initial2.appendChild(menutext2)
+        initial2.appendChild(menuimg2)
 
-        // var initial3 = document.createElement('button')
-        // initial3.classList.add('trans2off')
-        // var menutext3 =  document.createElement('span')
-        // menutext3.classList.add('txtpageimage')
-        // menutext3.innerHTML = 'Português PT'
-        // var menuimg3 = document.createElement('img')
-        // menuimg3.classList.add('imageclmenu')
-        // menuimg3.src = 'img/Languages/pt.png'
-        // splash.appendChild(initial3)
-        // initial3.appendChild(menutext3)
-        // initial3.appendChild(menuimg3)
+        var initial3 = document.createElement('button')
+        initial3.classList.add('trans2off')
+        var menutext3 =  document.createElement('span')
+        menutext3.classList.add('txtpageimage')
+        menutext3.innerHTML = 'Italiano IT'
+        var menuimg3 = document.createElement('img')
+        menuimg3.classList.add('imageclmenu')
+        menuimg3.src = 'img/Languages/it.png'
+        splash.appendChild(initial3)
+        initial3.appendChild(menutext3)
+        initial3.appendChild(menuimg3)
+
+
+        var initial4 = document.createElement('button')
+        initial4.classList.add('trans2off')
+        var menutext4 =  document.createElement('span')
+        menutext4.classList.add('txtpageimage')
+        menutext4.innerHTML = 'Română RO'
+        var menuimg4 = document.createElement('img')
+        menuimg4.classList.add('imageclmenu')
+        menuimg4.src = 'img/Languages/ro.png'
+        splash.appendChild(initial4)
+        initial4.appendChild(menutext4)
+        initial4.appendChild(menuimg4)
+
+        // var initial10 = document.createElement('button')
+        // initial10.classList.add('trans2off')
+        // var menutext10 =  document.createElement('span')
+        // menutext10.classList.add('txtpageimage')
+        // menutext10.innerHTML = 'Português PT'
+        // var menuimg10 = document.createElement('img')
+        // menuimg10.classList.add('imageclmenu')
+        // menuimg10.src = 'img/Languages/pt.png'
+        // splash.appendChild(initial10)
+        // initial10.appendChild(menutext10)
+        // initial10.appendChild(menuimg10)
 
         // var initial4 = document.createElement('button')
         // initial4.classList.add('trans2off')
@@ -237,91 +292,222 @@ document.addEventListener("deviceready", onload, false);
         // initial4.appendChild(menutext4)
         // initial4.appendChild(menuimg4)
 
-        var initial5 = document.createElement('button')
-        initial5.classList.add('trans2off')
-        var menutext5 =  document.createElement('span')
-        menutext5.classList.add('txtpageimage')
-        menutext5.innerHTML = 'Français FR'
-        var menuimg5 = document.createElement('img')
-        menuimg5.classList.add('imageclmenu')
-        menuimg5.src = 'img/Languages/fr.png'
-        splash.appendChild(initial5)
-        initial5.appendChild(menutext5)
-        initial5.appendChild(menuimg5)
+        
 
-        var initial6 = document.createElement('button')
-        initial6.classList.add('trans2off')
-        var menutext6 =  document.createElement('span')
-        menutext6.classList.add('txtpageimage')
-        menutext6.innerHTML = '中文 CN'
-        var menuimg6 = document.createElement('img')
-        menuimg6.classList.add('imageclmenu')
-        menuimg6.src = 'img/Languages/cn.png'
-        splash.appendChild(initial6)
-        initial6.appendChild(menutext6)
-        initial6.appendChild(menuimg6)
+        // var initial6 = document.createElement('button')
+        // initial6.classList.add('trans2off')
+        // var menutext6 =  document.createElement('span')
+        // menutext6.classList.add('txtpageimage')
+        // menutext6.innerHTML = '中文 CN'
+        // var menuimg6 = document.createElement('img')
+        // menuimg6.classList.add('imageclmenu')
+        // menuimg6.src = 'img/Languages/cn.png'
+        // splash.appendChild(initial6)
+        // initial6.appendChild(menutext6)
+        // initial6.appendChild(menuimg6)
 
-        var initial7 = document.createElement('button')
-        initial7.classList.add('trans2off')
-        var menutext7 =  document.createElement('span')
-        menutext7.classList.add('txtpageimage')
-        menutext7.innerHTML = '粵語 HK'
-        var menuimg7 = document.createElement('img')
-        menuimg7.classList.add('imageclmenu')
-        menuimg7.src = 'img/Languages/hk.png'
-        splash.appendChild(initial7)
-        initial7.appendChild(menutext7)
-        initial7.appendChild(menuimg7)
+        // var initial7 = document.createElement('button')
+        // initial7.classList.add('trans2off')
+        // var menutext7 =  document.createElement('span')
+        // menutext7.classList.add('txtpageimage')
+        // menutext7.innerHTML = '粵語 HK'
+        // var menuimg7 = document.createElement('img')
+        // menuimg7.classList.add('imageclmenu')
+        // menuimg7.src = 'img/Languages/hk.png'
+        // splash.appendChild(initial7)
+        // initial7.appendChild(menutext7)
+        // initial7.appendChild(menuimg7)
 
-        var initial8 = document.createElement('button')
-        initial8.classList.add('trans2off')
-        var menutext8 =  document.createElement('span')
-        menutext8.classList.add('txtpageimage')
-        menutext8.innerHTML = '한국어 KR'
-        var menuimg8 = document.createElement('img')
-        menuimg8.classList.add('imageclmenu')
-        menuimg8.src = 'img/Languages/kr.png'
-        splash.appendChild(initial8)
-        initial8.appendChild(menutext8)
-        initial8.appendChild(menuimg8)
+        // var initial8 = document.createElement('button')
+        // initial8.classList.add('trans2off')
+        // var menutext8 =  document.createElement('span')
+        // menutext8.classList.add('txtpageimage')
+        // menutext8.innerHTML = '한국어 KR'
+        // var menuimg8 = document.createElement('img')
+        // menuimg8.classList.add('imageclmenu')
+        // menuimg8.src = 'img/Languages/kr.png'
+        // splash.appendChild(initial8)
+        // initial8.appendChild(menutext8)
+        // initial8.appendChild(menuimg8)
 
-        var initial9 = document.createElement('button')
-        initial9.classList.add('trans2off')
-        var menutext9 =  document.createElement('span')
-        menutext9.classList.add('txtpageimage')
-        menutext9.innerHTML = '日本語 JP'
-        var menuimg9 = document.createElement('img')
-        menuimg9.classList.add('imageclmenu')
-        menuimg9.src = 'img/Languages/jp.png'
-        splash.appendChild(initial9)
-        initial9.appendChild(menutext9)
-        initial9.appendChild(menuimg9)
+        // var initial9 = document.createElement('button')
+        // initial9.classList.add('trans2off')
+        // var menutext9 =  document.createElement('span')
+        // menutext9.classList.add('txtpageimage')
+        // menutext9.innerHTML = '日本語 JP'
+        // var menuimg9 = document.createElement('img')
+        // menuimg9.classList.add('imageclmenu')
+        // menuimg9.src = 'img/Languages/jp.png'
+        // splash.appendChild(initial9)
+        // initial9.appendChild(menutext9)
+        // initial9.appendChild(menuimg9)
 
         setTimeout(() => {
             initial1.classList.remove('trans1off')
             initial1.classList.add('lang1on')
-            // initial2.classList.remove('trans2off')
-            // initial2.classList.add('lang2on')
-            // initial3.classList.remove('trans2off')
-            // initial3.classList.add('lang3on')
-            // initial4.classList.remove('trans2off')
-            // initial4.classList.add('lang4on')
-            initial5.classList.remove('trans2off')
-            initial5.classList.add('lang5on')
-            initial6.classList.remove('trans2off')
-            initial6.classList.add('lang6on')
-            initial7.classList.remove('trans2off')
-            initial7.classList.add('lang7on')
-            initial8.classList.remove('trans2off')
-            initial8.classList.add('lang8on')
-            initial9.classList.remove('trans2off')
-            initial9.classList.add('lang9on')
+            initial2.classList.remove('trans2off')
+            initial2.classList.add('lang2on')
+            initial3.classList.remove('trans2off')
+            initial3.classList.add('lang3on')
+            initial4.classList.remove('trans2off')
+            initial4.classList.add('lang4on')
+            // initial5.classList.remove('trans2off')
+            // initial5.classList.add('lang5on')
+            // initial6.classList.remove('trans2off')
+            // initial6.classList.add('lang6on')
+            // initial7.classList.remove('trans2off')
+            // initial7.classList.add('lang7on')
+            // initial8.classList.remove('trans2off')
+            // initial8.classList.add('lang8on')
+            // initial9.classList.remove('trans2off')
+            // initial9.classList.add('lang9on')
             
         }, 100);
 
         initial1.addEventListener('tap', () => {
             db = window.sqlitePlugin.openDatabase(
-                {name: "aacdatabase_EN.db", location: 'default', createFromLocation: 1});
+                {name: "aacdatabase_PT.db", location: 'default', createFromLocation: 1});
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
+                        var len = rs.rows.length;
+                        console.log(len + " rows found.");
+                        console.log(imgarray.length)
+                        for (let i=0; i<len; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
+                        }  
+                        for (let j=0; j<imgarray.length; j++) {
+                            imgarray[j].src = rs.rows.item(j).image
+                            mainaudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT main error: ' + error.message);
+                    });
+                })
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
+                        var lencat = rs.rows.length;
+                        console.log(lencat + " rows found.");
+                        console.log(imgcatarray.length)
+                        for (let i=0; i<lencat; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
+                        }
+                        for (let j=0; j<imgcatarray.length; j++) {
+                            imgcatarray[j].src = rs.rows.item(j).image
+                            cataudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT cat error: ' + error.message);
+                    });
+                });
+                splash.removeChild(initial1)
+                splash.removeChild(initial2)
+                splash.removeChild(initial3)
+                splash.removeChild(initial4)
+            splashscr()
+            removeBlur()
+        })
+
+        initial2.addEventListener('tap', () => {
+            db = window.sqlitePlugin.openDatabase(
+                {name: "aacdatabase_ES.db", location: 'default', createFromLocation: 1});
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
+                        var len = rs.rows.length;
+                        console.log(len + " rows found.");
+                        console.log(imgarray.length)
+                        for (let i=0; i<len; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
+                        }  
+                        for (let j=0; j<imgarray.length; j++) {
+                            imgarray[j].src = rs.rows.item(j).image
+                            mainaudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT main error: ' + error.message);
+                    });
+                })
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
+                        var lencat = rs.rows.length;
+                        console.log(lencat + " rows found.");
+                        console.log(imgcatarray.length)
+                        for (let i=0; i<lencat; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
+                        }
+                        for (let j=0; j<imgcatarray.length; j++) {
+                            imgcatarray[j].src = rs.rows.item(j).image
+                            cataudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT cat error: ' + error.message);
+                    });
+                });
+            splash.removeChild(initial1)
+            splash.removeChild(initial2)
+            splash.removeChild(initial3)
+            splash.removeChild(initial4)
+            splashscr()
+            removeBlur()
+        })
+
+        initial3.addEventListener('tap', () => {
+            db = window.sqlitePlugin.openDatabase(
+                {name: "aacdatabase_IT.db", location: 'default', createFromLocation: 1});
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
+                        var len = rs.rows.length;
+                        console.log(len + " rows found.");
+                        console.log(imgarray.length)
+                        for (let i=0; i<len; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
+                        }  
+                        for (let j=0; j<imgarray.length; j++) {
+                            imgarray[j].src = rs.rows.item(j).image
+                            mainaudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT main error: ' + error.message);
+                    });
+                })
+                db.transaction(function(tx) {
+                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
+                        var lencat = rs.rows.length;
+                        console.log(lencat + " rows found.");
+                        console.log(imgcatarray.length)
+                        for (let i=0; i<lencat; i++){
+                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
+                        }
+                        for (let j=0; j<imgcatarray.length; j++) {
+                            imgcatarray[j].src = rs.rows.item(j).image
+                            cataudioarray[j].src = rs.rows.item(j).sound
+                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
+                        }
+                    }, function(tx, error) {
+                      console.log('SELECT cat error: ' + error.message);
+                    });
+                });
+            splash.removeChild(initial1)
+            splash.removeChild(initial2)
+            splash.removeChild(initial3)
+            splash.removeChild(initial4)
+            splashscr()
+            removeBlur()
+        })
+
+        initial4.addEventListener('tap', () => {
+            db = window.sqlitePlugin.openDatabase(
+                {name: "aacdatabase_RO.db", location: 'default', createFromLocation: 1});
                 db.transaction(function(tx) {
                     tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
                         var len = rs.rows.length;
@@ -360,20 +546,15 @@ document.addEventListener("deviceready", onload, false);
                 });
             splashscr()
             splash.removeChild(initial1)
-            // splash.removeChild(initial2)
-            // splash.removeChild(initial3)
-            // splash.removeChild(initial4)
-            splash.removeChild(initial5)
-            splash.removeChild(initial6)
-            splash.removeChild(initial7)
-            splash.removeChild(initial8)
-            splash.removeChild(initial9)
+            splash.removeChild(initial2)
+            splash.removeChild(initial3)
+            splash.removeChild(initial4)
             removeBlur()
         })
 
-        // initial2.addEventListener('tap', () => {
+        // initial5.addEventListener('tap', () => {
         //     db = window.sqlitePlugin.openDatabase(
-        //         {name: "aacdatabase_IT.db", location: 'default', createFromLocation: 1});
+        //         {name: "aacdatabase_FR.db", location: 'default', createFromLocation: 1});
         //         db.transaction(function(tx) {
         //             tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
         //                 var len = rs.rows.length;
@@ -412,9 +593,9 @@ document.addEventListener("deviceready", onload, false);
         //         });
         //     splashscr()
         //     splash.removeChild(initial1)
-        //     splash.removeChild(initial2)
-        //     splash.removeChild(initial3)
-        //     splash.removeChild(initial4)
+        //     // splash.removeChild(initial2)
+        //     // splash.removeChild(initial3)
+        //     // splash.removeChild(initial4)
         //     splash.removeChild(initial5)
         //     splash.removeChild(initial6)
         //     splash.removeChild(initial7)
@@ -423,9 +604,9 @@ document.addEventListener("deviceready", onload, false);
         //     removeBlur()
         // })
 
-        // initial3.addEventListener('tap', () => {
+        // initial6.addEventListener('tap', () => {
         //     db = window.sqlitePlugin.openDatabase(
-        //         {name: "aacdatabase_PT.db", location: 'default', createFromLocation: 1});
+        //         {name: "aacdatabase_CN.db", location: 'default', createFromLocation: 1});
         //         db.transaction(function(tx) {
         //             tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
         //                 var len = rs.rows.length;
@@ -464,9 +645,9 @@ document.addEventListener("deviceready", onload, false);
         //         });
         //     splashscr()
         //     splash.removeChild(initial1)
-        //     splash.removeChild(initial2)
-        //     splash.removeChild(initial3)
-        //     splash.removeChild(initial4)
+        //     // splash.removeChild(initial2)
+        //     // splash.removeChild(initial3)
+        //     // splash.removeChild(initial4)
         //     splash.removeChild(initial5)
         //     splash.removeChild(initial6)
         //     splash.removeChild(initial7)
@@ -475,9 +656,9 @@ document.addEventListener("deviceready", onload, false);
         //     removeBlur()
         // })
 
-        // initial4.addEventListener('tap', () => {
+        // initial7.addEventListener('tap', () => {
         //     db = window.sqlitePlugin.openDatabase(
-        //         {name: "aacdatabase_ES.db", location: 'default', createFromLocation: 1});
+        //         {name: "aacdatabase_HK.db", location: 'default', createFromLocation: 1});
         //         db.transaction(function(tx) {
         //             tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
         //                 var len = rs.rows.length;
@@ -516,9 +697,9 @@ document.addEventListener("deviceready", onload, false);
         //         });
         //     splashscr()
         //     splash.removeChild(initial1)
-        //     splash.removeChild(initial2)
-        //     splash.removeChild(initial3)
-        //     splash.removeChild(initial4)
+        //     // splash.removeChild(initial2)
+        //     // splash.removeChild(initial3)
+        //     // splash.removeChild(initial4)
         //     splash.removeChild(initial5)
         //     splash.removeChild(initial6)
         //     splash.removeChild(initial7)
@@ -527,265 +708,109 @@ document.addEventListener("deviceready", onload, false);
         //     removeBlur()
         // })
 
-        initial5.addEventListener('tap', () => {
-            db = window.sqlitePlugin.openDatabase(
-                {name: "aacdatabase_FR.db", location: 'default', createFromLocation: 1});
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
-                        var len = rs.rows.length;
-                        console.log(len + " rows found.");
-                        console.log(imgarray.length)
-                        for (let i=0; i<len; i++){
-                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
-                        }  
-                        for (let j=0; j<imgarray.length; j++) {
-                            imgarray[j].src = rs.rows.item(j).image
-                            mainaudioarray[j].src = rs.rows.item(j).sound
-                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
-                        }
-                    }, function(tx, error) {
-                      console.log('SELECT main error: ' + error.message);
-                    });
-                })
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
-                        var lencat = rs.rows.length;
-                        console.log(lencat + " rows found.");
-                        console.log(imgcatarray.length)
-                        for (let i=0; i<lencat; i++){
-                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
-                        }
-                        for (let j=0; j<imgcatarray.length; j++) {
-                            imgcatarray[j].src = rs.rows.item(j).image
-                            cataudioarray[j].src = rs.rows.item(j).sound
-                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
-                        }
-                    }, function(tx, error) {
-                      console.log('SELECT cat error: ' + error.message);
-                    });
-                });
-            splashscr()
-            splash.removeChild(initial1)
-            // splash.removeChild(initial2)
-            // splash.removeChild(initial3)
-            // splash.removeChild(initial4)
-            splash.removeChild(initial5)
-            splash.removeChild(initial6)
-            splash.removeChild(initial7)
-            splash.removeChild(initial8)
-            splash.removeChild(initial9)
-            removeBlur()
-        })
+        // initial8.addEventListener('tap', () => {
+        //     db = window.sqlitePlugin.openDatabase(
+        //         {name: "aacdatabase_KR.db", location: 'default', createFromLocation: 1});
+        //         db.transaction(function(tx) {
+        //             tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
+        //                 var len = rs.rows.length;
+        //                 console.log(len + " rows found.");
+        //                 console.log(imgarray.length)
+        //                 for (let i=0; i<len; i++){
+        //                     console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
+        //                 }  
+        //                 for (let j=0; j<imgarray.length; j++) {
+        //                     imgarray[j].src = rs.rows.item(j).image
+        //                     mainaudioarray[j].src = rs.rows.item(j).sound
+        //                     console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+        //                     txtpageimagearray[j].innerHTML = rs.rows.item(j).description
+        //                 }
+        //             }, function(tx, error) {
+        //               console.log('SELECT main error: ' + error.message);
+        //             });
+        //         })
+        //         db.transaction(function(tx) {
+        //             tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
+        //                 var lencat = rs.rows.length;
+        //                 console.log(lencat + " rows found.");
+        //                 console.log(imgcatarray.length)
+        //                 for (let i=0; i<lencat; i++){
+        //                     console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
+        //                 }
+        //                 for (let j=0; j<imgcatarray.length; j++) {
+        //                     imgcatarray[j].src = rs.rows.item(j).image
+        //                     cataudioarray[j].src = rs.rows.item(j).sound
+        //                     console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+        //                     txtcatimagearray[j].innerHTML = rs.rows.item(j).description
+        //                 }
+        //             }, function(tx, error) {
+        //               console.log('SELECT cat error: ' + error.message);
+        //             });
+        //         });
+        //     splashscr()
+        //     splash.removeChild(initial1)
+        //     // splash.removeChild(initial2)
+        //     // splash.removeChild(initial3)
+        //     // splash.removeChild(initial4)
+        //     splash.removeChild(initial5)
+        //     splash.removeChild(initial6)
+        //     splash.removeChild(initial7)
+        //     splash.removeChild(initial8)
+        //     splash.removeChild(initial9)
+        //     removeBlur()
+        // })
 
-        initial6.addEventListener('tap', () => {
-            db = window.sqlitePlugin.openDatabase(
-                {name: "aacdatabase_CN.db", location: 'default', createFromLocation: 1});
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
-                        var len = rs.rows.length;
-                        console.log(len + " rows found.");
-                        console.log(imgarray.length)
-                        for (let i=0; i<len; i++){
-                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
-                        }  
-                        for (let j=0; j<imgarray.length; j++) {
-                            imgarray[j].src = rs.rows.item(j).image
-                            mainaudioarray[j].src = rs.rows.item(j).sound
-                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
-                        }
-                    }, function(tx, error) {
-                      console.log('SELECT main error: ' + error.message);
-                    });
-                })
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
-                        var lencat = rs.rows.length;
-                        console.log(lencat + " rows found.");
-                        console.log(imgcatarray.length)
-                        for (let i=0; i<lencat; i++){
-                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
-                        }
-                        for (let j=0; j<imgcatarray.length; j++) {
-                            imgcatarray[j].src = rs.rows.item(j).image
-                            cataudioarray[j].src = rs.rows.item(j).sound
-                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
-                        }
-                    }, function(tx, error) {
-                      console.log('SELECT cat error: ' + error.message);
-                    });
-                });
-            splashscr()
-            splash.removeChild(initial1)
-            // splash.removeChild(initial2)
-            // splash.removeChild(initial3)
-            // splash.removeChild(initial4)
-            splash.removeChild(initial5)
-            splash.removeChild(initial6)
-            splash.removeChild(initial7)
-            splash.removeChild(initial8)
-            splash.removeChild(initial9)
-            removeBlur()
-        })
-
-        initial7.addEventListener('tap', () => {
-            db = window.sqlitePlugin.openDatabase(
-                {name: "aacdatabase_HK.db", location: 'default', createFromLocation: 1});
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
-                        var len = rs.rows.length;
-                        console.log(len + " rows found.");
-                        console.log(imgarray.length)
-                        for (let i=0; i<len; i++){
-                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
-                        }  
-                        for (let j=0; j<imgarray.length; j++) {
-                            imgarray[j].src = rs.rows.item(j).image
-                            mainaudioarray[j].src = rs.rows.item(j).sound
-                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
-                        }
-                    }, function(tx, error) {
-                      console.log('SELECT main error: ' + error.message);
-                    });
-                })
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
-                        var lencat = rs.rows.length;
-                        console.log(lencat + " rows found.");
-                        console.log(imgcatarray.length)
-                        for (let i=0; i<lencat; i++){
-                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
-                        }
-                        for (let j=0; j<imgcatarray.length; j++) {
-                            imgcatarray[j].src = rs.rows.item(j).image
-                            cataudioarray[j].src = rs.rows.item(j).sound
-                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
-                        }
-                    }, function(tx, error) {
-                      console.log('SELECT cat error: ' + error.message);
-                    });
-                });
-            splashscr()
-            splash.removeChild(initial1)
-            // splash.removeChild(initial2)
-            // splash.removeChild(initial3)
-            // splash.removeChild(initial4)
-            splash.removeChild(initial5)
-            splash.removeChild(initial6)
-            splash.removeChild(initial7)
-            splash.removeChild(initial8)
-            splash.removeChild(initial9)
-            removeBlur()
-        })
-
-        initial8.addEventListener('tap', () => {
-            db = window.sqlitePlugin.openDatabase(
-                {name: "aacdatabase_KR.db", location: 'default', createFromLocation: 1});
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
-                        var len = rs.rows.length;
-                        console.log(len + " rows found.");
-                        console.log(imgarray.length)
-                        for (let i=0; i<len; i++){
-                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
-                        }  
-                        for (let j=0; j<imgarray.length; j++) {
-                            imgarray[j].src = rs.rows.item(j).image
-                            mainaudioarray[j].src = rs.rows.item(j).sound
-                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
-                        }
-                    }, function(tx, error) {
-                      console.log('SELECT main error: ' + error.message);
-                    });
-                })
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
-                        var lencat = rs.rows.length;
-                        console.log(lencat + " rows found.");
-                        console.log(imgcatarray.length)
-                        for (let i=0; i<lencat; i++){
-                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
-                        }
-                        for (let j=0; j<imgcatarray.length; j++) {
-                            imgcatarray[j].src = rs.rows.item(j).image
-                            cataudioarray[j].src = rs.rows.item(j).sound
-                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
-                        }
-                    }, function(tx, error) {
-                      console.log('SELECT cat error: ' + error.message);
-                    });
-                });
-            splashscr()
-            splash.removeChild(initial1)
-            // splash.removeChild(initial2)
-            // splash.removeChild(initial3)
-            // splash.removeChild(initial4)
-            splash.removeChild(initial5)
-            splash.removeChild(initial6)
-            splash.removeChild(initial7)
-            splash.removeChild(initial8)
-            splash.removeChild(initial9)
-            removeBlur()
-        })
-
-        initial9.addEventListener('tap', () => {
-            db = window.sqlitePlugin.openDatabase(
-                {name: "aacdatabase_JP.db", location: 'default', createFromLocation: 1});
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
-                        var len = rs.rows.length;
-                        console.log(len + " rows found.");
-                        console.log(imgarray.length)
-                        for (let i=0; i<len; i++){
-                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
-                        }  
-                        for (let j=0; j<imgarray.length; j++) {
-                            imgarray[j].src = rs.rows.item(j).image
-                            mainaudioarray[j].src = rs.rows.item(j).sound
-                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                            txtpageimagearray[j].innerHTML = rs.rows.item(j).description
-                        }
-                    }, function(tx, error) {
-                      console.log('SELECT main error: ' + error.message);
-                    });
-                })
-                db.transaction(function(tx) {
-                    tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
-                        var lencat = rs.rows.length;
-                        console.log(lencat + " rows found.");
-                        console.log(imgcatarray.length)
-                        for (let i=0; i<lencat; i++){
-                            console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
-                        }
-                        for (let j=0; j<imgcatarray.length; j++) {
-                            imgcatarray[j].src = rs.rows.item(j).image
-                            cataudioarray[j].src = rs.rows.item(j).sound
-                            console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
-                            txtcatimagearray[j].innerHTML = rs.rows.item(j).description
-                        }
-                    }, function(tx, error) {
-                      console.log('SELECT cat error: ' + error.message);
-                    });
-                });
-            splashscr()
-            splash.removeChild(initial1)
-            // splash.removeChild(initial2)
-            // splash.removeChild(initial3)
-            // splash.removeChild(initial4)
-            splash.removeChild(initial5)
-            splash.removeChild(initial6)
-            splash.removeChild(initial7)
-            splash.removeChild(initial8)
-            splash.removeChild(initial9)
-            removeBlur()
-        })
+        // initial9.addEventListener('tap', () => {
+        //     db = window.sqlitePlugin.openDatabase(
+        //         {name: "aacdatabase_JP.db", location: 'default', createFromLocation: 1});
+        //         db.transaction(function(tx) {
+        //             tx.executeSql('SELECT * FROM maintable', [], function(tx, rs) {
+        //                 var len = rs.rows.length;
+        //                 console.log(len + " rows found.");
+        //                 console.log(imgarray.length)
+        //                 for (let i=0; i<len; i++){
+        //                     console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image  + " sound =  " + rs.rows.item(i).sound);
+        //                 }  
+        //                 for (let j=0; j<imgarray.length; j++) {
+        //                     imgarray[j].src = rs.rows.item(j).image
+        //                     mainaudioarray[j].src = rs.rows.item(j).sound
+        //                     console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+        //                     txtpageimagearray[j].innerHTML = rs.rows.item(j).description
+        //                 }
+        //             }, function(tx, error) {
+        //               console.log('SELECT main error: ' + error.message);
+        //             });
+        //         })
+        //         db.transaction(function(tx) {
+        //             tx.executeSql('SELECT * FROM cattable', [], function(tx, rs) {
+        //                 var lencat = rs.rows.length;
+        //                 console.log(lencat + " rows found.");
+        //                 console.log(imgcatarray.length)
+        //                 for (let i=0; i<lencat; i++){
+        //                     console.log("Row = " + rs.rows.item(i).id + " Image =  " + rs.rows.item(i).image);
+        //                 }
+        //                 for (let j=0; j<imgcatarray.length; j++) {
+        //                     imgcatarray[j].src = rs.rows.item(j).image
+        //                     cataudioarray[j].src = rs.rows.item(j).sound
+        //                     console.log("Row = " + rs.rows.item(j).id + " sound =  " + rs.rows.item(j).sound);
+        //                     txtcatimagearray[j].innerHTML = rs.rows.item(j).description
+        //                 }
+        //             }, function(tx, error) {
+        //               console.log('SELECT cat error: ' + error.message);
+        //             });
+        //         });
+        //     splashscr()
+        //     splash.removeChild(initial1)
+        //     // splash.removeChild(initial2)
+        //     // splash.removeChild(initial3)
+        //     // splash.removeChild(initial4)
+        //     splash.removeChild(initial5)
+        //     splash.removeChild(initial6)
+        //     splash.removeChild(initial7)
+        //     splash.removeChild(initial8)
+        //     splash.removeChild(initial9)
+        //     removeBlur()
+        // })
     }
 
 
@@ -910,7 +935,25 @@ p4array.forEach(element4 => {
 
 // Reset Swiped Pages on Category Click
 for (let i=0; i < categoryArray.length; i++) {
-    categoryArray[i].addEventListener('tap', () => {    
+    categoryArray[i].addEventListener('tap', () => {  
+        categoryArray[i].style.filter="brightness(100%)"
+        categoryArray[i].style.webkitFilter="brightness(100%)"
+
+        if (i!=0) {
+            for (let j=0; j < i; j++) {
+                categoryArray[j].style.webkitFilter="brightness(70%)"
+                categoryArray[j].style.filter="brightness(70%)"
+            }
+            for (let m=i+1; m < categoryArray.length; m++) {
+                categoryArray[m].style.webkitFilter="brightness(70%)"
+                categoryArray[m].style.filter="brightness(70%)"
+            }
+        } else {
+            for (let n=i+1; n < categoryArray.length; n++) {
+                categoryArray[n].style.webkitFilter="brightness(70%)"
+                categoryArray[n].style.filter="brightness(70%)"
+            }
+        }  
         p2array.forEach(element2 => {
                 element2.style.webkitTransform = "translate(100%)" 
         })
@@ -1390,9 +1433,15 @@ imgarray.forEach(element => {
 // Delete Images with afferent Sounds
 
 btndel.addEventListener('touchstart', function() {
-    btndel.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.2), inset 0px 0px 3px rgba(5, 146, 146, 0.3)'
-    btndel.firstElementChild.style.marginTop = '-38%'
-    btndel.style.border = 'none'
+    if (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") {
+        btndel.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.2), inset 0px 0px 3px rgba(5, 146, 146, 0.3)'
+        btndel.firstElementChild.style.transform = "translateY(-47%)"
+        btndel.style.border = 'none'
+        } else {
+            btndel.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.2), inset 0px 0px 3px rgba(5, 146, 146, 0.3)'
+            btndel.firstElementChild.style.transform = "translateY(-47%)"
+            btndel.style.border = 'none'
+        }
 
     console.log(topdisplay.children)
 
@@ -1450,18 +1499,30 @@ btndel.addEventListener('touchstart', function() {
     }
 })
 btndel.addEventListener('touchend', () => {
-    btndel.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.3), inset 0px 0px 3px rgba(5, 146, 146, 0.5)'
-    btndel.style.border = '1px solid white'
-    btndel.firstElementChild.style.marginTop = '-40%'
+    if (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") {
+        btndel.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.3), inset 0px 0px 3px rgba(5, 146, 146, 0.5)'
+        btndel.style.border = '1px solid white'
+        btndel.firstElementChild.style.transform = "translateY(-50%)"
+        } else {
+            btndel.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.3), inset 0px 0px 3px rgba(5, 146, 146, 0.5)'
+            btndel.firstElementChild.style.transform = "translateY(-50%)"
+            btndel.style.border = '1px solid white'
+        }
 })
 
 
 // Play Sounds for Displayed Images
  
 btnplay.addEventListener('touchstart', function() {
-    btnplay.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.2), inset 0px 0px 3px rgba(5, 146, 146, 0.2)'
-    btnplay.firstElementChild.style.marginTop = '-29%'
-    btnplay.style.border = 'none'
+    if (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") {
+        btnplay.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.2), inset 0px 0px 3px rgba(5, 146, 146, 0.2)'
+        btnplay.firstElementChild.style.transform = "translateY(-47%)"
+        btnplay.style.border = 'none'
+        } else {
+            btnplay.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.2), inset 0px 0px 3px rgba(5, 146, 146, 0.2)'
+            btnplay.firstElementChild.style.transform = "translateY(-47%)"
+            btnplay.style.border = 'none'
+        }
 
     console.log(audiodisplay.children)
     console.log(audiodisplay)
@@ -1484,9 +1545,15 @@ btnplay.addEventListener('touchstart', function() {
 })
 
 btnplay.addEventListener('touchend', () => {
-    btnplay.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.3), inset 0px 0px 3px rgba(5, 146, 146, 0.5)'
-    btnplay.style.border = '1px solid white'
-    btnplay.firstElementChild.style.marginTop = '-31%'
+    if (screen.orientation.type === "landscape-primary" || screen.orientation.type === "landscape-secondary") {
+        btnplay.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.3), inset 0px 0px 3px rgba(5, 146, 146, 0.5)'
+        btnplay.style.border = '1px solid white'
+        btnplay.firstElementChild.style.transform = "translateY(-50%)"
+        } else {
+            btnplay.style.boxShadow = '-1px 0px 5px black, inset 0px 1px 0px rgba(5, 146, 146, 0.3), inset 0px 0px 3px rgba(5, 146, 146, 0.5)'
+            btnplay.style.border = '1px solid white'
+            btnplay.firstElementChild.style.transform = "translateY(-50%)"
+        }
 })
 
 
@@ -1988,7 +2055,7 @@ for (let i=0; i<imgcatarray.length; i++) {
             wrapper.removeChild(initial2)
             wrapper.removeChild(initial3)
 
-            // Create Camera Gallery Select PopUp
+            // Create Camera/Gallery Select PopUp
             var choice1 = document.createElement('button')
             choice1.classList.add('trans1off')
             var imgmenutext1 =  document.createElement('span')
@@ -2099,7 +2166,7 @@ for (let i=0; i<imgcatarray.length; i++) {
                                 })
                             })
 
-                            wrapper.removeChild(exit1)
+                            wrapper.removeChild(exit)
                             wrapper.removeChild(choice1)
                             wrapper.removeChild(choice2)
                             removeBlur()
@@ -2166,7 +2233,7 @@ for (let i=0; i<imgcatarray.length; i++) {
                     )
 
                     db.transaction(function(tx) {
-                        tx.executeSql("SELECT image FROM maintable WHERE id = " + k, [], function(tx, rs) {
+                        tx.executeSql("SELECT image FROM cattable WHERE id = " + k, [], function(tx, rs) {
                             var len = rs.rows.length;
                             console.log(len + " rows found.");
                             imgcatarray[i].src = rs.rows.item(0).image
