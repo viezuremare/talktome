@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Nanum Gothic';
+
+    src:
+         url('fonts/NanumGothic-ExtraBold.ttf') format('truetype'),
+         url('fonts/NanumGothic-Regular.ttf') format('truetype'),
+         url('fonts/NanumGothic-Bold.ttf') format('truetype');
+       
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Noto Sans HK';
+
+    src:
+         url('fonts/NotoSansHK-Black.ttf') format('truetype'),
+         url('fonts/NotoSansHK-Bold.ttf') format('truetype'),
+         url('fonts/NotoSansHK-Light.ttf') format('truetype'),
+         url('fonts/NotoSansHK-Medium.ttf') format('truetype'),
+         url('fonts/NotoSansHK-Regular.ttf') format('truetype'),
+         url('fonts/NotoSansHK-Thin.ttf') format('truetype');
+        
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Noto Sans JP';
+
+    src:
+         url('fonts/NotoSansJP-Black.ttf') format('truetype'),
+         url('fonts/NotoSansJP-Bold.ttf') format('truetype'),
+         url('fonts/NotoSansJP-Light.ttf') format('truetype'),
+         url('fonts/NotoSansJP-Medium.ttf') format('truetype'),
+         url('fonts/NotoSansJP-Regular.ttf') format('truetype'),
+         url('fonts/NotoSansJP-Thin.ttf') format('truetype');
+       
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Roboto';
+
+    src:
+         url('fonts/Roboto-Black.ttf') format('truetype'),
+         url('fonts/Roboto-BlackItalic.ttf') format('truetype'),
+         url('fonts/Roboto-Bold.ttf') format('truetype'),
+         url('fonts/Roboto-BoldItalic.ttf') format('truetype'),
+         url('fonts/Roboto-Light.ttf') format('truetype'),
+         url('fonts/Roboto-LightItalic.ttf') format('truetype'),
+         url('fonts/Roboto-Medium.ttf') format('truetype'),
+         url('fonts/Roboto-MediumItalic.ttf') format('truetype'),
+         url('fonts/Roboto-Regular.ttf') format('truetype'),
+         url('fonts/Roboto-RegularItalic.ttf') format('truetype'),
+         url('fonts/Roboto-Thin.ttf') format('truetype'),
+         url('fonts/Roboto-ThinItalic.ttf') format('truetype');
+       
+    font-weight: normal;
+    font-style: normal;
+
+}
+
