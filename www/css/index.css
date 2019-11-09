@@ -15,12 +15,12 @@
     font-family: 'Noto Sans HK';
 
     src:
-         url('fonts/NotoSansHK-Black.otf') format('truetype'),
-         url('fonts/NotoSansHK-Bold.otf') format('truetype'),
-         url('fonts/NotoSansHK-Light.otf') format('truetype'),
-         url('fonts/NotoSansHK-Medium.otf') format('truetype'),
-         url('fonts/NotoSansHK-Regular.otf') format('truetype'),
-         url('fonts/NotoSansHK-Thin.otf') format('truetype');
+         url('fonts/NotoSansHK-Black.otf') format('opentype'),
+         url('fonts/NotoSansHK-Bold.otf') format('opentype'),
+         url('fonts/NotoSansHK-Light.otf') format('opentype'),
+         url('fonts/NotoSansHK-Medium.otf') format('opentype'),
+         url('fonts/NotoSansHK-Regular.otf') format('opentype'),
+         url('fonts/NotoSansHK-Thin.otf') format('opentype');
         
     font-weight: normal;
     font-style: normal;
@@ -31,12 +31,12 @@
     font-family: 'Noto Sans JP';
 
     src:
-         url('fonts/NotoSansJP-Black.otf') format('truetype'),
-         url('fonts/NotoSansJP-Bold.otf') format('truetype'),
-         url('fonts/NotoSansJP-Light.otf') format('truetype'),
-         url('fonts/NotoSansJP-Medium.otf') format('truetype'),
-         url('fonts/NotoSansJP-Regular.otf') format('truetype'),
-         url('fonts/NotoSansJP-Thin.otf') format('truetype');
+         url('fonts/NotoSansJP-Black.otf') format('opentype'),
+         url('fonts/NotoSansJP-Bold.otf') format('opentype'),
+         url('fonts/NotoSansJP-Light.otf') format('opentype'),
+         url('fonts/NotoSansJP-Medium.otf') format('opentype'),
+         url('fonts/NotoSansJP-Regular.otf') format('opentype'),
+         url('fonts/NotoSansJP-Thin.otf') format('opentype');
        
     font-weight: normal;
     font-style: normal;
