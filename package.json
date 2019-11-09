@@ -38,8 +38,7 @@
     },
     "platforms": [
       "browser",
-      "android",
-      "ios"
+      "android"
     ]
   }
 }
